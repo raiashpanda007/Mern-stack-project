@@ -12,7 +12,7 @@ function LikedVideos() {
       <Header />
 
       {/* Main content area */}
-      <div className="flex flex-grow w-full">
+      <div className="flex flex-grow w-full overflow-hidden"> {/* Added overflow-hidden */}
         {/* Sidebar */}
         <div className={`relative top-16 ${Bar ? "w-1/5" : "w-0"} transition-all duration-300`}>
           {Bar && <Sidebar />}
@@ -36,7 +36,20 @@ function LikedVideos() {
 
           {/* Videos Component List */}
           <div className="flex-grow overflow-auto p-4">
-            <Component />
+            <Component type="Video" />
+            <Component type="Video" />
+            <Component type="Video" />
+            <Component type="Video" />
+            <Component type="Video" />
+            <Component type="Video" />
+            <Component type="Video" />
+            <Component type="Video" />
+            <Component type="Video" />
+            <Component type="Video" />
+            <Component type="Video" />
+            <Component type="Video" />
+            <Component type="Video" />
+            <Component type="Video" />
           </div>
         </div>
       </div>
