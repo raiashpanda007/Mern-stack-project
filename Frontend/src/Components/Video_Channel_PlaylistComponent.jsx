@@ -25,7 +25,7 @@ const Component = ({ type = "Video" }) => {
       </div>
 
       {/* Video Title and Description */}
-      <div className="w-4/5 h-full flex flex-col justify-between">
+      <div className="w-4/5 h-full flex flex-col justify-center">
         <div className="flex items-end">
           <h1 className="text-4xl font-bold p-3 font-roboto"> Video Title </h1>
         </div>

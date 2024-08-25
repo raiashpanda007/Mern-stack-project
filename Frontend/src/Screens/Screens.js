@@ -4,4 +4,5 @@ import Login from "./Login";
 import Home from "./Home";
 import LikedVideos from "./LikedVideos";
 import WatchHistory from "./WatchHistory";
-export { Welcome, Register, Login, Home, LikedVideos, WatchHistory };
+import Subscriptions from "./Subscriptions";
+export { Welcome, Register, Login, Home, LikedVideos, WatchHistory,Subscriptions };
