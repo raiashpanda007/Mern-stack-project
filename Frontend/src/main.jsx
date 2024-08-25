@@ -11,7 +11,7 @@ import {
 
 import store from "./store/Store.js";
 import { Provider } from "react-redux";
-import { Welcome,Register,Login,Home,LikedVideos } from './Screens/Screens.js';
+import { Welcome,Register,Login,Home,LikedVideos, WatchHistory } from './Screens/Screens.js';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -21,7 +21,7 @@ const router = createBrowserRouter(
       <Route path="login" element={<Login />} />
       <Route path="home" element={<Home />} />
       <Route path="liked-videos" element = {<LikedVideos/>}/>
-
+      <Route path="watch-history" element = {<WatchHistory/>}/>
     </Route>
   )
 );
