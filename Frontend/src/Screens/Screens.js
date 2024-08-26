@@ -6,4 +6,15 @@ import LikedVideos from "./LikedVideos";
 import WatchHistory from "./WatchHistory";
 import Subscriptions from "./Subscriptions";
 import Your_Playlist from "./Your_Playlist";
-export { Welcome, Register, Login, Home, LikedVideos, WatchHistory,Subscriptions,Your_Playlist };
+import PlaylistScreen from "./PlaylistScreen";
+export {
+  Welcome,
+  Register,
+  Login,
+  Home,
+  LikedVideos,
+  WatchHistory,
+  Subscriptions,
+  Your_Playlist,
+  PlaylistScreen,
+};
