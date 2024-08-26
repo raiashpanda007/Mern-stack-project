@@ -6,7 +6,7 @@ const Component = ({ type = "Video" }) => {
   return (
     <div className="m-2 h-60 pb-10 rounded-xl cursor-pointer flex hover:border hover:bg-neutral-700 transition-all duration-300 ease-in-out">
       {/* Image/Video Thumbnail Container */}
-      <div className="w-1/5 h-full flex">
+      <div className="w-1/5 h-full flex items-center justify-center ">
         {type === "Video" ? (
           <img
             src={Logo}
@@ -18,7 +18,7 @@ const Component = ({ type = "Video" }) => {
           <img
             src={Logo}
             alt="Thumbnail"
-            className="h-24 w-24 object-cover rounded-full"
+            className="h-24 w-24 object-cover rounded-full border"
             style={{ objectFit: "contain" }}  // Adjust for other types like audio or playlist icons
           />
         )}
