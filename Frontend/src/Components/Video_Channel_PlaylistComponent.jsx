@@ -2,24 +2,24 @@ import React from "react";
 import Video from "../assets/your-story.mp4";
 import Logo from "../assets/Logo.png";
 
-const Component = ({ type = "Video" }) => {
+const Component = ({ type = "Video",onClick }) => {
   return (
-    <div className="m-2 h-60 pb-10 rounded-xl cursor-pointer flex hover:border hover:bg-neutral-700 transition-all duration-300 ease-in-out">
+    <div onClick={onClick} className="m-2 h-60 pb-10 rounded-xl cursor-pointer flex hover:border hover:bg-neutral-700 transition-all duration-300 ease-in-out">
       {/* Image/Video Thumbnail Container */}
       <div className="w-1/5 h-full flex items-center justify-center ">
-        {type === "Video" ? (
+        {type === "Channel" ? (
+          <img
+          src={Logo}
+          alt="Thumbnail"
+          className="h-24 w-24 object-cover rounded-full border"
+          style={{ objectFit: "contain" }}  // Adjust for other types like audio or playlist icons
+        />
+        ) : (
           <img
             src={Logo}
             alt="Video Thumbnail"
             className="h-full w-full object-cover rounded-xl"
             style={{ objectFit: "contain" }}  // Ensures the image fits properly within the box
-          />
-        ) : (
-          <img
-            src={Logo}
-            alt="Thumbnail"
-            className="h-24 w-24 object-cover rounded-full border"
-            style={{ objectFit: "contain" }}  // Adjust for other types like audio or playlist icons
           />
         )}
       </div>
@@ -32,6 +32,11 @@ const Component = ({ type = "Video" }) => {
         <div className="p-2">
           <p className="font-bold text-2xl text-gray-300">Video Description</p>
           <p className="font-semibold text-lg text-gray-400">Video released date</p>
+          {
+            type == "Playlist" &&(
+              <p className="font-semibold text-lg text-gray-400">• 10 videos </p>
+            )
+          }
         </div>
       </div>
     </div>
