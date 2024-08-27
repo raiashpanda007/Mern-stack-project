@@ -1,10 +1,16 @@
 import React from "react";
 import { Header, Sidebar, Component } from "../Components/Component.js";
 import Logo from "../assets/Logo.png";
-import { useSelector } from "react-redux";
+import { useSelector , useDispatch } from "react-redux";
+import {setType} from "../store/TypeSearchResult";
 
+import Search_Result_options from "../Components/Search_Result_options.jsx";
 function Search_Results() {
   const Bar = useSelector((state) => state.sideBar.sidebarShow);
+  const dispatch = useDispatch();
+
+    // TODO: make that search results must have an object in which it have an property of type LIKE :"Video or Playlist" and then we can use that to render the video or playlist
+
 
   return (
     <div className="h-screen flex flex-col">
@@ -24,6 +30,11 @@ function Search_Results() {
             Bar ? "w-4/5" : "w-full"
           } transition-all duration-300 overflow-auto`}
         >
+            <div className="w-1/3 h-1/6  flex items-center justify-evenly">
+            <Search_Result_options Label="Videos" onClick={()=>dispatch(setType('Videos'))} />
+            <Search_Result_options Label="Playlists" onClick={()=>dispatch(setType('Playlists'))}/>
+            <Search_Result_options Label="Channels" onClick={()=>dispatch(setType('Channels'))}/>
+            </div>
         
         </div>
       </div>

@@ -19,7 +19,7 @@ function Header() {
 
   const search = (data) => {
     const query = encodeURIComponent(data.search);
-    navigate(`/search-results/${query}`);
+    query&&navigate(`/search-results/${query}`);
   }
 
 
