@@ -7,6 +7,7 @@ import WatchHistory from "./WatchHistory";
 import Subscriptions from "./Subscriptions";
 import Your_Playlist from "./Your_Playlist";
 import PlaylistScreen from "./PlaylistScreen";
+import Search_Results from "./Search_Results";
 export {
   Welcome,
   Register,
@@ -17,4 +18,5 @@ export {
   Subscriptions,
   Your_Playlist,
   PlaylistScreen,
+  Search_Results
 };

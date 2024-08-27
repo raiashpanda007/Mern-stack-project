@@ -24,7 +24,7 @@ function Header() {
         </h1>
       </div>
 
-      <div className="w-3/6 flex items-center">
+      <form className="w-3/6 flex items-center">
         <input
           type="text"
           placeholder="Search..."
@@ -33,7 +33,7 @@ function Header() {
         <div className="ml-2 p-3 bg-gray-700/50 backdrop-blur-md">
           <SearchIcon className="cursor-pointer" />
         </div>
-      </div>
+      </form>
 
       <div className=" border rounded-full p-1 flex justify-center items-center cursor-pointer">
         <PersonIcon className="h-10 w-10" />
