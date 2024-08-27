@@ -4,6 +4,7 @@ import { MenuIcon, SearchIcon, PersonIcon } from "../assets/Icons";
 import { useDispatch,useSelector } from "react-redux";
 import {showSidebar} from '../store/Sidebar.js'
 import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
 function Header() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -11,6 +12,17 @@ function Header() {
   const onClickHamburger = () =>{
     dispatch(showSidebar(!Bar));
   }
+
+
+
+  const { register, handleSubmit } = useForm();
+
+  const search = (data) => {
+    const query = encodeURIComponent(data.search);
+    navigate(`/search-results/${query}`);
+  }
+
+
   const onClickLogo = () =>{
     navigate('/');
   }
@@ -24,15 +36,16 @@ function Header() {
         </h1>
       </div>
 
-      <form className="w-3/6 flex items-center">
+      <form onSubmit={handleSubmit(search)} className="w-3/6 flex items-center">
         <input
           type="text"
           placeholder="Search..."
           className=" border w-4/6 h-10 bg-gray-700 text-white px-2 rounded"
+          {...register("search")}
         />
-        <div className="ml-2 p-3 bg-gray-700/50 backdrop-blur-md">
+        <button className="ml-2 p-3 bg-gray-700/50 backdrop-blur-md" type="submit">
           <SearchIcon className="cursor-pointer" />
-        </div>
+        </button>
       </form>
 
       <div className=" border rounded-full p-1 flex justify-center items-center cursor-pointer">
