@@ -7,6 +7,7 @@ import {setType} from "../store/TypeSearchResult";
 import Search_Result_options from "../Components/Search_Result_options.jsx";
 function Search_Results() {
   const Bar = useSelector((state) => state.sideBar.sidebarShow);
+  const type = useSelector((state) => state.searchType.type);
   const dispatch = useDispatch();
 
     // TODO: make that search results must have an object in which it have an property of type LIKE :"Video or Playlist" and then we can use that to render the video or playlist
@@ -35,7 +36,9 @@ function Search_Results() {
             <Search_Result_options Label="Playlists" onClick={()=>dispatch(setType('Playlists'))}/>
             <Search_Result_options Label="Channels" onClick={()=>dispatch(setType('Channels'))}/>
             </div>
-        
+            <div className="h-5/6">
+              <Component type={type} />
+            </div>
         </div>
       </div>
     </div>

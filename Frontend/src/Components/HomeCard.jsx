@@ -28,7 +28,7 @@ function HomeCard() {
   return (
     <div
       className={
-        Bar ? " h-1/2 sm:w-1/3 flex-auto" : " h-1/2 w-1/4 flex-auto"
+        Bar ? " h-1/2 sm:w-1/3 flex-auto cursor-pointer" : " h-1/2 w-1/4 flex-auto cursor-pointer"
       }
     >
       {play ? (

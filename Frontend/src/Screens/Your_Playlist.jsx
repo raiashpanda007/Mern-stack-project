@@ -39,20 +39,20 @@ function Your_Playlist() {
             <div className="pl-8 text-neutral-300 text-xl"> • 18 Playlists</div>
           </div>
           <div className="flex-grow overflow-auto p-4">
-            <Component type="Playlist" onClick={()=>navigate('/playlist/:playlistID')} />
-            <Component type="Playlist" />
-            <Component type="Playlist" />
-            <Component type="Playlist" />
-            <Component type="Playlist" />
-            <Component type="Playlist" />
-            <Component type="Playlist" />
-            <Component type="Playlist" />
-            <Component type="Playlist" />
-            <Component type="Playlist" />
-            <Component type="Playlist" />
-            <Component type="Playlist" />
-            <Component type="Playlist" />
-            <Component type="Playlist" />
+            <Component type="Playlists" onClick={()=>navigate('/playlist/:playlistID')} />
+            <Component type="Playlists" />
+            <Component type="Playlists" />
+            <Component type="Playlists" />
+            <Component type="Playlists" />
+            <Component type="Playlists" />
+            <Component type="Playlists" />
+            <Component type="Playlists" />
+            <Component type="Playlists" />
+            <Component type="Playlists" />
+            <Component type="Playlists" />
+            <Component type="Playlists" />
+            <Component type="Playlists" />
+            <Component type="Playlists" />
           </div>
         </div>
       </div>

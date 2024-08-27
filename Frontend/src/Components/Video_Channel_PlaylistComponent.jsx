@@ -2,12 +2,12 @@ import React from "react";
 import Video from "../assets/your-story.mp4";
 import Logo from "../assets/Logo.png";
 
-const Component = ({ type = "Video",onClick }) => {
+const Component = ({ type = "Videos",onClick }) => {
   return (
     <div onClick={onClick} className="m-2 h-60 pb-10 rounded-xl cursor-pointer flex hover:border hover:bg-neutral-700 transition-all duration-300 ease-in-out">
       {/* Image/Video Thumbnail Container */}
       <div className="w-1/5 h-full flex items-center justify-center ">
-        {type === "Channel" ? (
+        {type === "Channels" ? (
           <img
           src={Logo}
           alt="Thumbnail"
@@ -33,7 +33,7 @@ const Component = ({ type = "Video",onClick }) => {
           <p className="font-bold text-2xl text-gray-300">Video Description</p>
           <p className="font-semibold text-lg text-gray-400">Video released date</p>
           {
-            type == "Playlist" &&(
+            type == "Playlists" &&(
               <p className="font-semibold text-lg text-gray-400">• 10 videos </p>
             )
           }
