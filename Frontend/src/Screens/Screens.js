@@ -8,6 +8,7 @@ import Subscriptions from "./Subscriptions";
 import Your_Playlist from "./Your_Playlist";
 import PlaylistScreen from "./PlaylistScreen";
 import Search_Results from "./Search_Results";
+import Channel from "./Channel";
 export {
   Welcome,
   Register,
@@ -18,5 +19,6 @@ export {
   Subscriptions,
   Your_Playlist,
   PlaylistScreen,
-  Search_Results
+  Search_Results,
+  Channel
 };
