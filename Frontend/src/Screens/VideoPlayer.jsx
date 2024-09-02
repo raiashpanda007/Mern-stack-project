@@ -44,19 +44,19 @@ function VideoPlayer() {
                 </MediaProvider>
               </MediaPlayer>
             </div>
-            <div className="border h-1/6">
+            <div className=" h-1/6">
               <div className="h-1/2 font-roberto text-4xl font-bold">
                 Heading of the video goes here
               </div>
-              <div className="h-1/2 border grid grid-cols-8">
-                <div className="col-span-1 flex items-center justify-center border">
+              <div className="h-1/2  grid grid-cols-8">
+                <div className="col-span-1 flex items-center justify-center ">
                   <img
                     src={Logo}
                     alt=""
                     className="h-10 w-10 rounded-full border "
                   />
                 </div>
-                <div className="col-span-3 border">
+                <div className="col-span-3 ">
                   <div className="h-2/3 flex text-2xl font-semibold font-outfit items-center">
                     Channel Name
                   </div>
