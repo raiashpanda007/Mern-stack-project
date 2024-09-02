@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Header, Sidebar, Component,Likes_Component } from "../Components/Component.js";
+import { Header, Sidebar, Component,Likes_Component,Dislike_Component } from "../Components/Component.js";
 
 import "@vidstack/react/player/styles/base.css";
 import { MediaPlayer, MediaProvider, Poster } from "@vidstack/react";
@@ -65,6 +65,7 @@ function VideoPlayer() {
                 </div>
                 <div className="col-span-4 flex justify-evenly items-center">
                   <Likes_Component/>
+                  <Dislike_Component/>
                 </div>
               </div>
             </div>
