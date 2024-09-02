@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Header, Sidebar, Component,Likes_Component,Dislike_Component } from "../Components/Component.js";
+import { Header, Sidebar, Component,Likes_Component,Dislike_Component,Subscribe_Button_Component } from "../Components/Component.js";
 
 import "@vidstack/react/player/styles/base.css";
 import { MediaPlayer, MediaProvider, Poster } from "@vidstack/react";
@@ -7,6 +7,7 @@ import Logo from "../assets/logo.png";
 
 import { useSelector } from "react-redux";
 import Video from "../assets/your-story.mp4";
+
 
 function VideoPlayer() {
   const Bar = useSelector((state) => state.sideBar.sidebarShow);
@@ -66,6 +67,7 @@ function VideoPlayer() {
                 <div className="col-span-4 flex justify-evenly items-center">
                   <Likes_Component/>
                   <Dislike_Component/>
+                  <Subscribe_Button_Component/>
                 </div>
               </div>
             </div>
