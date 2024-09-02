@@ -9,6 +9,7 @@ import Your_Playlist from "./Your_Playlist";
 import PlaylistScreen from "./PlaylistScreen";
 import Search_Results from "./Search_Results";
 import Channel from "./Channel";
+import VideoPlayer from "./VideoPlayer";
 export {
   Welcome,
   Register,
@@ -20,5 +21,6 @@ export {
   Your_Playlist,
   PlaylistScreen,
   Search_Results,
-  Channel
+  Channel,
+  VideoPlayer,
 };

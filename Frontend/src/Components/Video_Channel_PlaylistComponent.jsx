@@ -4,7 +4,7 @@ import Logo from "../assets/Logo.png";
 
 const Component = ({ type = "Videos",onClick }) => {
   return (
-    <div onClick={onClick} className="m-2 h-60 pb-10 rounded-xl cursor-pointer flex hover:border hover:bg-neutral-700 transition-all duration-300 ease-in-out">
+    <div onClick={onClick} className="m-2 h-30 pb-10 rounded-xl cursor-pointer flex hover:border hover:bg-neutral-700 transition-all duration-300 ease-in-out">
       {/* Image/Video Thumbnail Container */}
       <div className="w-1/5 h-full flex items-center justify-center ">
         {type === "Channels" ? (
