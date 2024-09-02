@@ -1,16 +1,18 @@
 import React, { useEffect } from "react";
-import { Header, Sidebar, Component } from "../Components/Component.js";
+import { Header, Sidebar, Component,Likes_Component } from "../Components/Component.js";
 
 import "@vidstack/react/player/styles/base.css";
 import { MediaPlayer, MediaProvider, Poster } from "@vidstack/react";
 import Logo from "../assets/logo.png";
-import { PlayIcon } from "@vidstack/react/icons";
+
 import { useSelector } from "react-redux";
 import Video from "../assets/your-story.mp4";
 
 function VideoPlayer() {
   const Bar = useSelector((state) => state.sideBar.sidebarShow);
-
+  const metaData = {
+    isLiked: false,
+  };
   return (
     <div className="h-screen flex flex-col">
       {/* Header */}
@@ -47,11 +49,22 @@ function VideoPlayer() {
               </div>
               <div className="h-1/2 border grid grid-cols-8">
                 <div className="col-span-1 flex items-center justify-center border">
-                  <img src={Logo} alt="" className="h-10 w-10 rounded-full border "/>
+                  <img
+                    src={Logo}
+                    alt=""
+                    className="h-10 w-10 rounded-full border "
+                  />
                 </div>
                 <div className="col-span-3 border">
-                  <div className="h-2/3 flex text-2xl font-semibold font-outfit items-center">Channel Name</div>
-                  <div className="h-1/3 flex items-center font-medium text-neutral-300">1.7 Million • Subscribers</div>
+                  <div className="h-2/3 flex text-2xl font-semibold font-outfit items-center">
+                    Channel Name
+                  </div>
+                  <div className="h-1/3 flex items-center font-medium text-neutral-300">
+                    1.7 Million • Subscribers
+                  </div>
+                </div>
+                <div className="col-span-4 flex justify-evenly items-center">
+                  <Likes_Component/>
                 </div>
               </div>
             </div>
