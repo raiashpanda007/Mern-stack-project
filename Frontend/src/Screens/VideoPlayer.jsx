@@ -7,6 +7,8 @@ import {
   Dislike_Component,
   Subscribe_Button_Component,
   Descriptions_Component,
+  Post_Comment_Component as Post_Comment,
+  Button
 } from "../Components/Component.js";
 
 import "@vidstack/react/player/styles/base.css";
@@ -44,7 +46,7 @@ function VideoPlayer() {
         <div
           className={`relative top-16 grid grid-cols-6 ${
             Bar ? "w-4/5" : "w-full"
-          } transition-all duration-300 overflow-auto`}
+          } transition-all duration-300 overflow-auto pb-10`}
         >
           <div className="col-span-4 p-4">
             <div className="">
@@ -55,11 +57,11 @@ function VideoPlayer() {
               </MediaPlayer>
             </div>
             <div className="">
-              <div className="h-1/2 font-roberto text-4xl font-bold">
+              <div className="h-1/2 font-roberto text-4xl font-bold ">
                 Heading of the video goes here
               </div>
-              <div className="h-1/2  grid grid-cols-8">
-                <div className="col-span-1 flex items-center justify-center ">
+              <div className="h-1/2  grid grid-cols-10">
+                <div className="col-span-1 flex items-center ">
                   <img
                     src={Logo}
                     alt=""
@@ -74,7 +76,7 @@ function VideoPlayer() {
                     1.7 Million • Subscribers
                   </div>
                 </div>
-                <div className="col-span-4 flex justify-evenly items-center">
+                <div className="col-span-6 flex justify-evenly items-center">
                   <Likes_Component
                     isLiked={isLiked}
                     onClick={() => setIsLiked((prev) => !prev)}
@@ -89,20 +91,29 @@ function VideoPlayer() {
                   />
                 </div>
                 {/* Description */}
-                <div className="mt-2 col-span-8 border">
-                  <div className="border w-1/3 flex justify-evenly text-1xl font-semibold font-outfit">
-                    <div>299k</div> •<div>Views</div>•<div>3 YEARS AGO</div>
+                <div className="w-full mt-2 col-span-10 ">
+                  <div className=" w-1/4 flex justify-evenly text-1xl font-semibold font-outfit">
+                    <div>299k Views</div> •<div>3 YEARS AGO</div>
                   </div>
-                  <div>
-                    <Descriptions_Component text={``} />
+                  <div className="">
+                    <Descriptions_Component text={`dshsfdj`} />
                   </div>
                 </div>
               </div>
             </div>
+            <div className="">
+              {/* Post Comment */}
+              <Post_Comment />
+            </div>
           </div>
 
           <div className="col-span-2 p-4 space-y-4">
-            {/*  */}
+           <Component />
+            <Component />
+            <Component />
+            <Component />
+            <Component />
+            
             
           </div>
         </div>

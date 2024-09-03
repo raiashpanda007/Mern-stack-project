@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Descriptions_Component({ text, text_length = 50 }) {
+function Descriptions_Component({ text, text_length = 120 }) {
   const [showFullText, setShowFullText] = useState(false);
 
   const toggleShowMore = () => {
@@ -11,7 +11,7 @@ function Descriptions_Component({ text, text_length = 50 }) {
   const displayedText = shouldTruncate && !showFullText ? text.slice(0, text_length) + '...' : text;
 
   return (
-    <div>
+    <div className={text?'bg-neutral-700 p-2 m-2 rounded font-medium font-sans':'hidden'}>
       <p>{displayedText}</p>
       {shouldTruncate && (
         <span onClick={toggleShowMore} className="text-blue-500 cursor-pointer">
