@@ -8,7 +8,7 @@ import {
   Subscribe_Button_Component,
   Descriptions_Component,
   Post_Comment_Component as Post_Comment,
-  Button
+  Comments_Component as Comments,
 } from "../Components/Component.js";
 
 import "@vidstack/react/player/styles/base.css";
@@ -46,11 +46,11 @@ function VideoPlayer() {
         <div
           className={`relative top-16 grid grid-cols-6 ${
             Bar ? "w-4/5" : "w-full"
-          } transition-all duration-300 overflow-auto pb-10`}
+          } transition-all duration-300 overflow-auto pb-20`}
         >
           <div className="col-span-4 p-4">
-            <div className="">
-              <MediaPlayer title="Sprite Fight" src={Video} controls>
+            <div className="rounded">
+              <MediaPlayer title="Sprite Fight" src={Video} controls className="rounded">
                 <MediaProvider>
                   <Poster src={Logo} />
                 </MediaProvider>
@@ -104,6 +104,19 @@ function VideoPlayer() {
             <div className="">
               {/* Post Comment */}
               <Post_Comment />
+            </div>
+            <div>
+              <Comments/>
+              <Comments/>
+              <Comments/>
+              <Comments/>
+              <Comments/>
+              <Comments/>
+              <Comments/>
+              <Comments/>
+              <Comments/>
+              <Comments/>
+              
             </div>
           </div>
 

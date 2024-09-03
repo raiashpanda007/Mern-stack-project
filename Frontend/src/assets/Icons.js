@@ -7,4 +7,6 @@ import ThumbDownAltIcon from '@mui/icons-material/ThumbDownAlt';
 import HistoryIcon from '@mui/icons-material/History';
 import PlaylistPlayIcon from '@mui/icons-material/PlaylistPlay';
 import SubscriptionsIcon from '@mui/icons-material/Subscriptions';
-export { MenuIcon,SearchIcon,PersonIcon,HomeIcon,ThumbUpIcon, HistoryIcon, PlaylistPlayIcon, SubscriptionsIcon, ThumbDownAltIcon };
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+export { MenuIcon,SearchIcon,PersonIcon,HomeIcon,ThumbUpIcon, HistoryIcon, PlaylistPlayIcon, SubscriptionsIcon, ThumbDownAltIcon, KeyboardArrowDownIcon,KeyboardArrowUpIcon };
