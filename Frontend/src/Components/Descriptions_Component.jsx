@@ -1,18 +1,25 @@
-import React,{useState} from 'react'
+import React, { useState } from "react";
 
-function Descriptions_Component({text,text_length = 50}) {
-    const [showwFullText,setShowFullText] = useState(false);
-    const toggleShowMore = () =>{
-        setShowFullText(!showwFullText);
-    }
-    const shouldTurncate = text.length > text_length;
-    const displayedText = shouldTurncate ? text.slice(0,text_length) : text;
+function Descriptions_Component({ text, text_length = 50 }) {
+  const [showFullText, setShowFullText] = useState(false);
+
+  const toggleShowMore = () => {
+    setShowFullText(!showFullText);
+  };
+
+  const shouldTruncate = text.length > text_length;
+  const displayedText = shouldTruncate && !showFullText ? text.slice(0, text_length) + '...' : text;
+
   return (
     <div>
-        <p>{displayedText}</p>
-        {shouldTurncate && <span onClick={toggleShowMore} className='text-blue-500 cursor-pointer'>{showwFullText?'Show Less':'Show More'}</span>}
+      <p>{displayedText}</p>
+      {shouldTruncate && (
+        <span onClick={toggleShowMore} className="text-blue-500 cursor-pointer">
+          {showFullText ? "Show Less" : "Show More"}
+        </span>
+      )}
     </div>
-  )
+  );
 }
 
-export default Descriptions_Component
+export default Descriptions_Component;

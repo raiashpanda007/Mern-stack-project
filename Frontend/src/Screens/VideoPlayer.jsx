@@ -6,6 +6,7 @@ import {
   Likes_Component,
   Dislike_Component,
   Subscribe_Button_Component,
+  Descriptions_Component,
 } from "../Components/Component.js";
 
 import "@vidstack/react/player/styles/base.css";
@@ -53,7 +54,7 @@ function VideoPlayer() {
                 </MediaProvider>
               </MediaPlayer>
             </div>
-            <div className=" h-1/6">
+            <div className="">
               <div className="h-1/2 font-roberto text-4xl font-bold">
                 Heading of the video goes here
               </div>
@@ -93,7 +94,7 @@ function VideoPlayer() {
                     <div>299k</div> •<div>Views</div>•<div>3 YEARS AGO</div>
                   </div>
                   <div>
-                    
+                    <Descriptions_Component text={``} />
                   </div>
                 </div>
               </div>
@@ -101,11 +102,8 @@ function VideoPlayer() {
           </div>
 
           <div className="col-span-2 p-4 space-y-4">
-            <Component />
-            <Component />
-            <Component />
-            <Component />
-            <Component />
+            {/*  */}
+            
           </div>
         </div>
       </div>
