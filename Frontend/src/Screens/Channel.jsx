@@ -62,16 +62,16 @@ function Channel() {
 
           <div className="h-4/5">
             <Component type={currentTab}/>
-            <Component/>
-            <Component/>
-            <Component/>
-            <Component/>
-            <Component/>
-            <Component/>
-            <Component/>
-            <Component/>
-            <Component/>
-            <Component/>
+            <Component type={currentTab}/>
+            <Component type={currentTab}/>
+            <Component type={currentTab}/>
+            <Component type={currentTab}/>
+            <Component type={currentTab}/>
+            <Component type={currentTab}/>
+            <Component type={currentTab}/>
+            <Component type={currentTab}/>
+            <Component type={currentTab}/>
+            <Component type={currentTab}/>
           </div>
         </div>
         </div>

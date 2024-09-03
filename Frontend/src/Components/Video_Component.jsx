@@ -6,7 +6,7 @@ import { colors } from '@mui/material';
 function Video_Component({ label, ...metaData }) {
     return (
       <div>
-        <div className="flex items-center">
+        <div className="flex items-center" >
           {/* Change the color using the style prop */}
           <ThumbUpIcon style={{ color: metaData.isLiked ? blue[500] : colors.common.white }} />
           <div>{label}</div>

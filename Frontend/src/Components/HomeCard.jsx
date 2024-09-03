@@ -2,11 +2,12 @@ import React, { useRef, useState, useEffect } from "react";
 import Logo from "../assets/Logo.png";
 import Video from "../assets/your-story.mp4";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 function HomeCard() {
   const videoRef = useRef(null);
   const [play, setPlay] = useState(false);
   const [mute, setMute] = useState(true);
-
+  const navigate = useNavigate();
   const handleMouseIn = () => {
     if (videoRef.current) {
       videoRef.current.play();
@@ -29,7 +30,7 @@ function HomeCard() {
     <div
       className={
         Bar ? " h-1/2 sm:w-1/3 flex-auto cursor-pointer" : " h-1/2 w-1/4 flex-auto cursor-pointer"
-      }
+      } onClick={() => navigate("/video/VideoID")}
     >
       {play ? (
         <video
@@ -54,11 +55,12 @@ function HomeCard() {
           <img src={Logo} className="h-20 w-20 rounded-full border" alt="" />
         </div>
         <div className="w-3/4 h-full">
-          <div className="h-2/3 flex items-center">
+          <div className="h-1/2 flex items-end">
             <h1 className="text-3xl font-bold p-2 flex font-outfit">Video Title</h1>
           </div>
-          <div className="h-1/3 flex items-start">
-            <p className="text-sm text-gray-300 p-2">Channel Name</p>
+          <div className="h-1/2 flex flex-col justify-start">
+            <p className="font-medium text-gray-300 text-2xl p-2">Channel Name</p>
+            <p className="text-sm text-gray-300 p-2">3 • YEARS AGO</p>
           </div>
         </div>
       </div>

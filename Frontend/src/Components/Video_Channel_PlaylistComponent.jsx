@@ -1,8 +1,19 @@
 import React from "react";
 import Video from "../assets/your-story.mp4";
 import Logo from "../assets/Logo.png";
+import { useNavigate } from "react-router-dom";
+const Component = ({ type = "Videos" }) => {
+  const navigate = useNavigate();
+  const onClick = () =>{
+    if(type === "Videos"){
+      navigate('/video/videoID')
+    } else if(type === "Channels"){
+      navigate('/channel/channelID')
+    }else{
+      navigate('/playlist/playlistID')
+    }
 
-const Component = ({ type = "Videos",onClick }) => {
+  }
   return (
     <div onClick={onClick} className="m-2 h-30 pb-10 rounded-xl cursor-pointer flex hover:border hover:bg-neutral-700 transition-all duration-300 ease-in-out">
       {/* Image/Video Thumbnail Container */}

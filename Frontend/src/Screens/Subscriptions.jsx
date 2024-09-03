@@ -35,20 +35,20 @@ function Subscriptions() {
 
           {/* Videos Component List */}
           <div className="flex-grow overflow-auto p-4">
-            <Component type="Channel" />
-            <Component type="Channel" />
-            <Component type="Channel" />
-            <Component type="Channel" />
-            <Component type="Channel" />
-            <Component type="Channel" />
-            <Component type="Channel" />
-            <Component type="Channel" />
-            <Component type="Channel" />
-            <Component type="Channel" />
-            <Component type="Channel" />
-            <Component type="Channel" />
-            <Component type="Channel" />
-            <Component type="Channel" />
+            <Component type="Channels" />
+            <Component type="Channels" />
+            <Component type="Channels" />
+            <Component type="Channels" />
+            <Component type="Channels" />
+            <Component type="Channels" />
+            <Component type="Channels" />
+            <Component type="Channels" />
+            <Component type="Channels" />
+            <Component type="Channels" />
+            <Component type="Channels" />
+            <Component type="Channels" />
+            <Component type="Channels" />
+            <Component type="Channels" />
           </div>
         </div>
       </div>

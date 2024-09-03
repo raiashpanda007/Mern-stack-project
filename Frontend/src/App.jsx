@@ -9,6 +9,9 @@ function App() {
 
   return (
     <div className='h-screen w-screen bg-black text-white overflow-hidden relative'>
+      <div className='absolute z-10'>
+        hio
+      </div>
       <Outlet />
     </div>
   )

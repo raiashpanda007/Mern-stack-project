@@ -18,7 +18,7 @@ function Home() {
         <div
           className={`relative top-16 flex flex-wrap overflow-y-auto h-screen p-4 gap-4 ${
             Bar ? "w-4/5" : "w-full"
-          } transition-all duration-300`}
+          } transition-all duration-300 pb-10`}
         >
           {/* Rendering multiple HomeCard components */}
           {Array(12).fill().map((_, index) => (
