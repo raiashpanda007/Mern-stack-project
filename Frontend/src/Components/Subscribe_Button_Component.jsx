@@ -1,8 +1,8 @@
 import React from "react";
 
-function Subscribe_Button_Component({ isSubscribed = false }) {
+function Subscribe_Button_Component({ isSubscribed = false,onClick }) {
   return (
-    <div className={isSubscribed?"w-1/3 rounded-3xl flex justify-center items-center bg-neutral-700 border h-14 cursor-pointer":"w-1/3 rounded-3xl flex justify-center items-center bg-red-500 border h-14 cursor-pointer"}>
+    <div onClick={onClick} className={isSubscribed?"w-1/3 rounded-3xl flex justify-center items-center bg-neutral-700 border h-14 cursor-pointer":"w-1/3 rounded-3xl flex justify-center items-center bg-red-500 border h-14 cursor-pointer"}>
       <span className="font-semibold text-2xl font-outfit text-white">
         {isSubscribed ? "Subscribed" : "Subscribe"}
       </span>

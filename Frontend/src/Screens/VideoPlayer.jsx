@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import { Header, Sidebar, Component,Likes_Component,Dislike_Component,Subscribe_Button_Component } from "../Components/Component.js";
 
 import "@vidstack/react/player/styles/base.css";
@@ -10,6 +10,9 @@ import Video from "../assets/your-story.mp4";
 
 
 function VideoPlayer() {
+  const [isLiked, setIsLiked] = useState(false);
+  const [isDisliked, setIsDisliked] = useState(false);
+  const [isSubscribed, setIsSubscribed] = useState(false);
   const Bar = useSelector((state) => state.sideBar.sidebarShow);
   const metaData = {
     isLiked: false,
@@ -65,9 +68,14 @@ function VideoPlayer() {
                   </div>
                 </div>
                 <div className="col-span-4 flex justify-evenly items-center">
-                  <Likes_Component/>
-                  <Dislike_Component/>
-                  <Subscribe_Button_Component/>
+                  <Likes_Component isLiked={isLiked} onClick = {()=>setIsLiked((prev)=>{
+                    if(isDisliked){
+                      setIsDisliked((prev)=>!prev)
+                    }
+                    !prev
+                    })} />
+                  <Dislike_Component isDisLiked={isDisliked} onClick = {()=>setIsDisliked((prev)=>!prev)}/>
+                  <Subscribe_Button_Component isSubscribed = {isSubscribed} onClick = {() =>setIsSubscribed((prev) => !prev)}/>
                 </div>
               </div>
             </div>
