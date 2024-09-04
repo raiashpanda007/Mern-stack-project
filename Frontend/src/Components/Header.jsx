@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { showSidebar } from "../store/Sidebar.js";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+
+import { showUpload_pop_up } from "../store/Upload_pop_up.js";
 function Header() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -12,6 +14,7 @@ function Header() {
   const onClickHamburger = () => {
     dispatch(showSidebar(!Bar));
   };
+
 
   const { register, handleSubmit } = useForm();
 
@@ -54,7 +57,7 @@ function Header() {
           <SearchIcon className="cursor-pointer" />
         </button>
       </form>
-      <div className="  border rounded-full p-1 flex justify-center items-center cursor-pointer">
+      <div className="  border rounded-full p-1 flex justify-center items-center cursor-pointer" onClick={()=>dispatch(showUpload_pop_up(true))}>
         <UploadIcon className="h-10 w-10" />
       </div>
       <div className="  border rounded-full p-1 flex justify-center items-center cursor-pointer">

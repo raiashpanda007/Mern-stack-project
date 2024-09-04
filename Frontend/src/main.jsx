@@ -11,7 +11,7 @@ import {
 
 import store from "./store/Store.js";
 import { Provider } from "react-redux";
-import { Welcome,Register,Login,Home,LikedVideos, WatchHistory,Subscriptions,Your_Playlist,PlaylistScreen,Search_Results,Channel,VideoPlayer } from './Screens/Screens.js';
+import { Welcome,Register,Login,Home,LikedVideos, WatchHistory,Subscriptions,Your_Playlist,PlaylistScreen,Search_Results,Channel,VideoPlayer, Stream } from './Screens/Screens.js';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -28,6 +28,7 @@ const router = createBrowserRouter(
       <Route path="search-results/:query" element = {<Search_Results/>}/>
       <Route path="channel/:channelID" element = {<Channel/>}/>
       <Route path="video/:videoID" element = {<VideoPlayer/>}/>
+      <Route path="start-streaming" element = {<Stream/>}/>
 
     </Route>
   )
