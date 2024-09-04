@@ -1,0 +1,15 @@
+{
+  "name": "my_tube_backend",
+  "version": "1.0.0",
+  "description": "This backend is for a video sharing platform on which users can interact by sharing multiple videos and through comments",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ashwin Rai",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
