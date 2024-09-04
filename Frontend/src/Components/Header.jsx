@@ -32,7 +32,7 @@ function Header() {
         <MenuIcon className="cursor-pointer" />
         <img
           src={Logo}
-          className="ml-1 h-10 w-10 cursor-pointer"
+          className="ml-2 h-10 w-10 cursor-pointer"
           onClick={onClickLogo}
         />
         <h1
