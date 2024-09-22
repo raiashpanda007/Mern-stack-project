@@ -1,5 +1,5 @@
 import mongoose from 'mongoose'
-export default async function connectDB() {
+ async function connectDB() {
   try {
 
     console.log(process.env.MONGO_URI)
@@ -11,3 +11,4 @@ export default async function connectDB() {
     console.log('Error in indexDB file :: ' , error);
   }  
 } 
+export default connectDB;

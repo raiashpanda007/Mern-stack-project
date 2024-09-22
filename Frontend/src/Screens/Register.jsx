@@ -2,7 +2,7 @@ import React from "react";
 import Logo from "../assets/logo.png";
 import { InputComponent, Button } from "../Components/Component.js";
 import { useForm } from "react-hook-form";
-
+import axios from "axios";
 function Register() {
   const {
     register,
@@ -11,17 +11,40 @@ function Register() {
     watch,
   } = useForm();
 
-  const OnSubmit = (data) => {
+  const OnSubmit = async (data) => {
     try {
-      console.log("Form data:", data);
-      console.log("Form submitted");
+      const formData = new FormData();
+  
+      // Append non-file fields
+      formData.append("fullName", data.fullName);
+      formData.append("email", data.email);
+      formData.append("userName", data.userName);
+      formData.append("password", data.password);
+  
+      // Append file fields, if they exist
+      if (data.profilePicture && data.profilePicture[0]) {
+        formData.append("profilePicture", data.profilePicture[0]);
+      }
+      if (data.coverImage && data.coverImage[0]) {
+        formData.append("coverImage", data.coverImage[0]);
+      }
+  
+      // API call without setting headers
+      const apiCall = await axios({
+        method: "post",
+        url: "http://localhost:3000/api/users/register",
+        data: formData, // Sending FormData object in the body
+      });
+  
+      console.log(apiCall);
     } catch (error) {
       console.error("Submission error:", error);
     }
   };
+  
 
   // Debug: Watch form values as you type
-  console.log("Full Name:", watch("fullName"));
+  
 
   return (
     <div className="w-full h-full flex items-center justify-center overflow-auto">
