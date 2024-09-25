@@ -53,6 +53,7 @@ const loginUser = asyncHandler(async (req, res) => {
       email: user.email,
       avatar: user?.avatar || '',
       coverImage: user?.coverImage || '',
+      channelID : user._id,
     }));
 });
 

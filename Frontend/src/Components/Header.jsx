@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { showSidebar } from "../store/Sidebar.js";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { showLogout_pop_up } from "../store/Logout_pop_up.js";
 import axios from "axios";
 
 import { showUpload_pop_up } from "../store/Upload_pop_up.js";
@@ -30,16 +31,7 @@ function Header() {
   };
 
   const logout = () => {
-      try {
-        const apiCall = axios({
-          method:"get",
-          url:"http://localhost:3000/api/users/logout",
-          withCredentials:true,
-        })
-      } catch (error) {
-        console.log(error);
-        
-      }
+      dispatch(showLogout_pop_up(true));
   }
   return (
     <div className="bg-gray-800 h-16 w-full flex items-center justify-between absolute">

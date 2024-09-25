@@ -4,9 +4,27 @@ import UserTable from "../../Models/user.model.js";
 import ApiResponse from "../../utilities/ApiResponse.js";
 
 const logout = asyncHandler(async (req, res) => {
-    console.log(req.cookies); // This should now print the cookies
-    res.status(200).json(ApiResponse.success("Logged out successfully"));
+  const channelId = req?.user._id;
+
+  if (!channelId) {
+    throw new ApiError(401, "Not verfied User");
+  }
+  const updateuser = await UserTable.findByIdAndUpdate(channelId, {
+    refreshToken: "",
+    accessToken: "",
+  });
+  console.log(updateuser);
+  const cookieOptions = {
+    httpOnly: true,
+    secure: true, // Use secure cookies only in production
+  };
+  return res
+    .status(200)
+    .clearcookie(accessToken, cookieOptions)
+    .clearcookie(refreshToken, cookieOptions)
+    .json(
+        new ApiResponse(200,"User successfully logout")
+    );
 });
 
-
-export default logout
+export default logout;

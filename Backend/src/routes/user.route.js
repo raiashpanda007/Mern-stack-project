@@ -3,6 +3,7 @@ import {upload} from '../Middleware/multer.middleware.js'
 import {registerUser} from '../Controller/UserAuth/userRegister.js'
 import loginUser from "../Controller/UserAuth/userLogin.js";
 import logout from '../Controller/UserAuth/userLogout.js'
+import verifyUser from "../Middleware/verifyUser.middleware.js";
 const route = Router();
 
 route.route('/register').post(
@@ -21,7 +22,10 @@ route.route('/login').post(
     loginUser
 )
 route.route('/logout').get(
-    logout
+    verifyUser,logout
+)
+route.route('/channel').get(
+    verifyUser
 )
 
 

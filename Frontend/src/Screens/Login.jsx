@@ -4,9 +4,12 @@ import { InputComponent, Button } from "../Components/Component.js";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import Cookies from "js-cookie";
-
+import { setLoading } from "../store/Loader.js";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 function Login() {
-  console.log("Document cookies:", document.cookie);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const [accessToken, setAccessToken] = useState(null);
   const {
@@ -16,18 +19,11 @@ function Login() {
   } = useForm();
 
   // useEffect to monitor cookie changes
-  useEffect(() => {
-    const token = Cookies.get("accessToken");
-    if (token) {
-      setAccessToken(token);
-      console.log("Token from cookies:", token);
-    } else {
-      console.log("No token found in cookies");
-    }
-  }, []); // This will check for accessToken on component mount
+ // This will check for accessToken on component mount
 
   const OnSubmit = async (data) => {
     try {
+      dispatch(setLoading(true));
       console.log("Form data:", data);
       const apiCall = await axios({
         method: "post",
@@ -37,17 +33,12 @@ function Login() {
       });
 
       console.log(apiCall);
-      console.log("Document cookies after API call:", document.cookie);
 
-      // Manually fetch the token from cookies after API call
-      const token = Cookies.get("accessToken");
-      if (token) {
-        setAccessToken(token);
-        console.log("Access Token after login:", token);
-      } else {
-        console.log("Access Token not found");
-      }
+      dispatch(setLoading(false));
+      navigate("/home");
+      
     } catch (error) {
+      dispatch(setLoading(false));
       console.error("Submission error:", error);
     }
   };

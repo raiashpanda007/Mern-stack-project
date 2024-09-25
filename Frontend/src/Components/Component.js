@@ -12,4 +12,5 @@ import Descriptions_Component from "./Descriptions_Component.jsx";
 import Post_Comment_Component from "./Post_Comment_Component.jsx";
 import Comments_Component from "./Comments_Component.jsx";
 import Loader from "./Loader.jsx";
-export {Button, InputComponent,Header,Sidebar,HomeCard,Component,ChannelOptions,Likes_Component,Dislike_Component,Subscribe_Button_Component,Descriptions_Component,Post_Comment_Component,Comments_Component,Loader};
+import Logout_Component from "./LogoutComponent.jsx";
+export {Button, InputComponent,Header,Sidebar,HomeCard,Component,ChannelOptions,Likes_Component,Dislike_Component,Subscribe_Button_Component,Descriptions_Component,Post_Comment_Component,Comments_Component,Loader,Logout_Component};
