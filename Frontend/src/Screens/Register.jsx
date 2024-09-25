@@ -3,7 +3,12 @@ import Logo from "../assets/logo.png";
 import { InputComponent, Button } from "../Components/Component.js";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import { setLoading } from "../store/Loader.js";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 function Register() {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const {
     register,
     handleSubmit,
@@ -12,6 +17,7 @@ function Register() {
   } = useForm();
 
   const OnSubmit = async (data) => {
+    dispatch(setLoading(true));
     try {
       const formData = new FormData();
   
@@ -37,7 +43,10 @@ function Register() {
       });
   
       console.log(apiCall);
+      dispatch(setLoading(false));
+      navigate("/home");
     } catch (error) {
+      dispatch(setLoading(false));
       console.error("Submission error:", error);
     }
   };
