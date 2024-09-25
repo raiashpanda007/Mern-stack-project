@@ -27,6 +27,7 @@ export default {
         slideInFromBelow: "slideInFromBelow 1s ease-out 0.5s forwards", 
         slideIn: 'slideIn 0.5s ease forwards',
         sideBarHoverAnimation: 'sideBarHoverAnimation 0.5s ease forwards',
+        
       },
     },
   },

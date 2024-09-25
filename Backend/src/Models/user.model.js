@@ -1,6 +1,16 @@
 import mongoose from "mongoose";
 import bcrypt from "bcrypt";
 import jwt from 'jsonwebtoken'
+import dotenv from "dotenv";
+dotenv.config();
+
+
+const obj1 = {
+  expiresIn:process.env.ACCESS_TOKEN_EXPIRY
+}
+const obj2 = {
+  expiresIn:process.env.REFRESH_TOKEN_EXPIRY
+}
 
 const UserSchema = new mongoose.Schema(
   {
@@ -40,6 +50,9 @@ const UserSchema = new mongoose.Schema(
     refreshToken: {
       type: String,
     },
+    accessToken:{
+      type:String
+    }
   },
   {
     timestamps: true,
@@ -64,18 +77,14 @@ UserSchema.methods.generateAccessToken = async function () {
     fullName:this.fullName,
     email:this.email,
 
-  },process.env.ACCESS_TOKEN_SECRET,{
-    expiresIn:process.env.ACCESS_TOKEN_EXPIRY
-  })
+  },String(process.env.ACCESS_TOKEN_SECRET),obj1)
   
 }
 UserSchema.methods.generateRefreshToken = async function () {
   return jwt.sign({
     _id: this._id,
     
-  },process.env.REFRESH_TOKEN_SECRET,{
-      expiresIn:process.REFRESH_TOKEN_EXPIRY
-  })
+  },String(process.env.REFRESH_TOKEN_SECRET),obj2)
 
 }
 

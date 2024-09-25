@@ -1,13 +1,15 @@
 import React from "react";
 import Logo from "../assets/Logo.png";
-import { MenuIcon, SearchIcon, PersonIcon, UploadIcon } from "../assets/Icons";
+import { MenuIcon, SearchIcon, PersonIcon, UploadIcon, LogoutIcon } from "../assets/Icons";
 import { useDispatch, useSelector } from "react-redux";
 import { showSidebar } from "../store/Sidebar.js";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import axios from "axios";
 
 import { showUpload_pop_up } from "../store/Upload_pop_up.js";
 function Header() {
+  
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const Bar = useSelector((state) => state.sideBar.sidebarShow);
@@ -26,6 +28,19 @@ function Header() {
   const onClickLogo = () => {
     navigate("/");
   };
+
+  const logout = () => {
+      try {
+        const apiCall = axios({
+          method:"get",
+          url:"http://localhost:3000/api/users/logout",
+          withCredentials:true,
+        })
+      } catch (error) {
+        console.log(error);
+        
+      }
+  }
   return (
     <div className="bg-gray-800 h-16 w-full flex items-center justify-between absolute">
       <div className="flex items-center w-1/6 " onClick={onClickHamburger}>
@@ -62,6 +77,9 @@ function Header() {
       </div>
       <div className="  border rounded-full p-1 flex justify-center items-center cursor-pointer">
         <PersonIcon className="h-10 w-10" />
+      </div>
+      <div className="  border rounded-full p-1 flex justify-center items-center cursor-pointer" onClick={logout}>
+        <LogoutIcon className="h-10 w-10"/>
       </div>
     </div>
   );

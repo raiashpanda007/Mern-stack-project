@@ -2,6 +2,7 @@ import { Router } from "express";
 import {upload} from '../Middleware/multer.middleware.js'
 import {registerUser} from '../Controller/UserAuth/userRegister.js'
 import loginUser from "../Controller/UserAuth/userLogin.js";
+import logout from '../Controller/UserAuth/userLogout.js'
 const route = Router();
 
 route.route('/register').post(
@@ -18,6 +19,9 @@ route.route('/register').post(
 )
 route.route('/login').post(
     loginUser
+)
+route.route('/logout').get(
+    logout
 )
 
 

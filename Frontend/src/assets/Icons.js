@@ -11,4 +11,5 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import UploadIcon from '@mui/icons-material/Upload';
 import CloseIcon from '@mui/icons-material/Close';
-export { MenuIcon,SearchIcon,PersonIcon,HomeIcon,ThumbUpIcon, HistoryIcon, PlaylistPlayIcon, SubscriptionsIcon, ThumbDownAltIcon, KeyboardArrowDownIcon,KeyboardArrowUpIcon,UploadIcon, CloseIcon };
+import LogoutIcon from '@mui/icons-material/Logout';
+export { MenuIcon,SearchIcon,PersonIcon,HomeIcon,ThumbUpIcon, HistoryIcon, PlaylistPlayIcon, SubscriptionsIcon, ThumbDownAltIcon, KeyboardArrowDownIcon,KeyboardArrowUpIcon,UploadIcon, CloseIcon,LogoutIcon };

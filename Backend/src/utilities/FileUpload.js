@@ -2,11 +2,7 @@ import { v2 as cloudinary } from "cloudinary";
 import fs from "fs/promises"; // Use promises-based version of fs for async/await
 import dotenv from "dotenv"
 dotenv.config();
-const obj = {
-  cloud_name: process.env.CLOUD_NAME,
-  api_key: process.env.CLOUDINARY_API_KEY,
-  api_secret: process.env.CLOUDINARY_SECRET_KEY,
-};
+
 // Cloudinary configuration
 cloudinary.config({
   cloud_name: process.env.CLOUD_NAME,
@@ -16,7 +12,7 @@ cloudinary.config({
 
 // Upload file to Cloudinary
 const uploadCloudinary = async (localFilePath) => {
-  console.dir(obj); // Verify API key is being read
+  // Verify API key is being read
 
   try {
     if (!localFilePath) return null;
