@@ -4,11 +4,13 @@ import { InputComponent, Button } from "../Components/Component.js";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { setLoading } from "../store/Loader.js";
-import { useDispatch } from "react-redux";
+import { setUser } from "../store/User.js";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 function Register() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const user = useSelector((state) => state.User.user);
   const {
     register,
     handleSubmit,
@@ -43,10 +45,13 @@ function Register() {
       });
   
       console.log(apiCall);
+      dispatch(setUser(apiCall.data.data));
+      
       dispatch(setLoading(false));
       navigate("/home");
     } catch (error) {
       dispatch(setLoading(false));
+      navigate("/sign-up");
       console.error("Submission error:", error);
     }
   };

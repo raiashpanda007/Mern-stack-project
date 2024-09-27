@@ -22,9 +22,7 @@ function HomeCard() {
     }
   };
   const Bar = useSelector((state) => state.sideBar.sidebarShow);
-  useEffect(() => {
-    console.log("Play:", play);
-  }, [play]);
+  
 
   return (
     <div

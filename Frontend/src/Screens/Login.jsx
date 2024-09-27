@@ -5,11 +5,13 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import Cookies from "js-cookie";
 import { setLoading } from "../store/Loader.js";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { setUser } from "../store/User.js";
 function Login() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const user = useSelector((state) => state.User.user);
 
   const [accessToken, setAccessToken] = useState(null);
   const {
@@ -32,13 +34,14 @@ function Login() {
         withCredentials: true, // Allow credentials (cookies)
       });
 
-      console.log(apiCall);
-
+      
+      dispatch(setUser(apiCall.data.data));
       dispatch(setLoading(false));
       navigate("/home");
       
     } catch (error) {
       dispatch(setLoading(false));
+      navigate('/Login')
       console.error("Submission error:", error);
     }
   };
